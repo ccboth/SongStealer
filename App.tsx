@@ -15,13 +15,12 @@ enum statusAuth {
 
 
 export default function App(): JSX.Element {
-	// testReq();
 	const [tokenLoad, setTokenLoad] = useState(false);
 
 	const [token, setToken] = useState("");
 
 	async function getToken() {
-		let requestStorage = await AsyncStorage.getItem("token");
+		const requestStorage = await AsyncStorage.getItem("token");
 		if (requestStorage) {
 			setToken(requestStorage);
 		}
@@ -44,6 +43,7 @@ export default function App(): JSX.Element {
 	else {
 		return (
 			<Navigate />
+			
 		)
 	}
 	
